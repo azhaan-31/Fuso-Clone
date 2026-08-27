@@ -1,0 +1,314 @@
+/* =========================================
+   VEHICLES HERO
+========================================= */
+
+.vehicles-hero {
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      120deg,
+      #061522,
+      #0d3557
+    );
+
+  color: #ffffff;
+}
+
+.vehicles-hero-content {
+  max-width: 750px;
+}
+
+.page-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 22px;
+
+  padding: 8px 15px;
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  border-radius: 50px;
+
+  color: #7bc1ff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.vehicles-hero h1 {
+  margin-bottom: 22px;
+
+  font-size: clamp(48px, 6vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+.vehicles-hero h1 span {
+  color: #55adff;
+}
+
+.vehicles-hero p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: rgba(255,255,255,.65);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   VEHICLES SECTION
+========================================= */
+
+.vehicles-section {
+  padding: 100px 0;
+}
+
+.section-heading {
+  max-width: 700px;
+
+  margin-bottom: 50px;
+}
+
+.section-heading > span {
+  color: #1688ff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.section-heading h2 {
+  margin: 12px 0 18px;
+
+  color: #101828;
+
+  font-size: clamp(36px, 5vw, 52px);
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+}
+
+.section-heading p {
+  color: #667085;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   VEHICLE CARD
+========================================= */
+
+.vehicle-card {
+  height: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid #e9eef5;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(16,24,40,.05);
+
+  transition: all .3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(16,24,40,.12);
+}
+
+.vehicle-image {
+  position: relative;
+
+  height: 230px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #eef6fc;
+}
+
+.vehicle-image img {
+  width: 125%;
+
+  max-width: none;
+
+  transition: transform .4s ease;
+}
+
+.vehicle-card:hover .vehicle-image img {
+  transform: scale(1.05);
+}
+
+.vehicle-icon {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #1688ff;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.vehicle-card-content {
+  padding: 28px;
+}
+
+.vehicle-category {
+  color: #1688ff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.vehicle-card h3 {
+  margin: 8px 0 12px;
+
+  color: #101828;
+
+  font-size: 24px;
+}
+
+.vehicle-card p {
+  margin-bottom: 22px;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.vehicle-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #1688ff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.vehicle-link:hover {
+  color: #0879ed;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.vehicle-features {
+  padding: 80px 0;
+
+  background: #f7f9fc;
+}
+
+.vehicle-feature {
+  padding: 35px;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  text-align: center;
+}
+
+.vehicle-feature > i {
+  font-size: 32px;
+
+  color: #1688ff;
+}
+
+.vehicle-feature h3 {
+  margin: 18px 0 10px;
+
+  font-size: 20px;
+}
+
+.vehicle-feature p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+  .vehicles-hero {
+    min-height: 400px;
+  }
+
+  .vehicles-section {
+    padding: 70px 0;
+  }
+
+  .vehicles-hero h1 {
+    font-size: 45px;
+  }
+
+}

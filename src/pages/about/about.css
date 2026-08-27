@@ -1,0 +1,696 @@
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   ABOUT HERO
+========================================= */
+
+.about-hero {
+  position: relative;
+
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 40%,
+      #164d83 0%,
+      #0b2945 35%,
+      #061522 70%,
+      #020910 100%
+    );
+
+  color: #ffffff;
+}
+
+.about-hero-shape {
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  right: -250px;
+  top: -300px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+}
+
+.about-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 750px;
+}
+
+.about-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 22px;
+
+  padding: 8px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #a9d5ff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.about-hero-content h1 {
+  margin-bottom: 25px;
+
+  font-size: clamp(48px, 6vw, 72px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+
+  font-weight: 700;
+}
+
+.about-hero-content h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #55adff
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.about-hero-content p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   ABOUT INTRO
+========================================= */
+
+.about-intro {
+  padding: 110px 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   ABOUT IMAGE
+========================================= */
+
+.about-image-wrapper {
+  position: relative;
+
+  min-height: 470px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1f7fc,
+      #e5f1fb
+    );
+
+  overflow: hidden;
+}
+
+.about-image-bg {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 136, 255, 0.12);
+
+  filter: blur(5px);
+}
+
+.about-car-image {
+  position: relative;
+
+  z-index: 2;
+
+  width: 125%;
+
+  max-width: none;
+
+  transform: translateX(20px);
+
+  filter:
+    drop-shadow(
+      0 25px 25px
+      rgba(0, 0, 0, 0.18)
+    );
+}
+
+
+/* =========================================
+   EXPERIENCE CARD
+========================================= */
+
+.about-experience-card {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 25px;
+  bottom: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 20px;
+
+  border-radius: 12px;
+
+  background: #071a2b;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-experience-card strong {
+  font-size: 30px;
+
+  line-height: 1;
+
+  color: #55adff;
+}
+
+.about-experience-card span {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   ABOUT CONTENT
+========================================= */
+
+.about-content {
+  padding-left: 25px;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #1688ff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.about-content h2 {
+  margin-bottom: 25px;
+
+  color: #101828;
+
+  font-size: clamp(36px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+}
+
+.about-content h2 span,
+.mission-content h2 span {
+  color: #1688ff;
+}
+
+.about-content > p {
+  margin-bottom: 18px;
+
+  color: #667085;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   ABOUT POINTS
+========================================= */
+
+.about-points {
+  margin: 30px 0;
+}
+
+.about-point {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.point-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf4ff;
+
+  color: #1688ff;
+
+  font-size: 15px;
+}
+
+.about-point strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #101828;
+
+  font-size: 15px;
+}
+
+.about-point p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   ABOUT BUTTON
+========================================= */
+
+.about-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  height: 50px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #1688ff;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.about-button:hover {
+  transform: translateY(-3px);
+
+  background: #0879ed;
+
+  box-shadow:
+    0 12px 25px rgba(22, 136, 255, 0.25);
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.about-stats-section {
+  padding: 70px 0;
+
+  background: #071a2b;
+}
+
+.about-stats {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.about-stat {
+  text-align: center;
+}
+
+.about-stat strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  font-weight: 700;
+}
+
+.about-stat span {
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 12px;
+}
+
+.stat-line {
+  width: 1px;
+
+  height: 45px;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   MISSION
+========================================= */
+
+.mission-section {
+  padding: 110px 0;
+
+  background: #f7f9fc;
+}
+
+.mission-content {
+  text-align: center;
+}
+
+.mission-content h2 {
+  margin-bottom: 20px;
+
+  color: #101828;
+
+  font-size: clamp(36px, 5vw, 54px);
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+}
+
+.mission-content > p {
+  max-width: 620px;
+
+  margin: 0 auto 35px;
+
+  color: #667085;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+.mission-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  background: #eaf4ff;
+
+  color: #1688ff;
+
+  font-size: 25px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.about-cta {
+  padding: 80px 0;
+}
+
+.cta-box {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 55px 60px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #071a2b,
+      #0d3d66
+    );
+
+  color: #ffffff;
+}
+
+.cta-box > div > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #6dbaff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.cta-box h2 {
+  margin: 0;
+
+  font-size: 38px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+}
+
+.cta-box button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  height: 52px;
+
+  padding: 0 25px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #1688ff;
+
+  color: #ffffff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.cta-box button:hover {
+  transform: translateY(-3px);
+
+  background: #3198ff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .about-hero {
+    min-height: 380px;
+  }
+
+  .about-intro {
+    padding: 80px 0;
+  }
+
+  .about-content {
+    padding-left: 0;
+  }
+
+  .about-image-wrapper {
+    min-height: 400px;
+  }
+
+  .about-stats {
+    flex-wrap: wrap;
+
+    gap: 35px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+  .about-hero {
+    min-height: 420px;
+
+    padding: 70px 0;
+  }
+
+  .about-hero-content h1 {
+    font-size: 46px;
+
+    letter-spacing: -2px;
+  }
+
+  .about-hero-content p {
+    font-size: 15px;
+  }
+
+  .about-intro {
+    padding: 70px 0;
+  }
+
+  .about-image-wrapper {
+    min-height: 300px;
+  }
+
+  .about-car-image {
+    width: 135%;
+  }
+
+  .about-content h2 {
+    font-size: 38px;
+  }
+
+  .about-stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px 20px;
+  }
+
+  .stat-line {
+    display: none;
+  }
+
+  .about-stat strong {
+    font-size: 28px;
+  }
+
+  .cta-box {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 35px 25px;
+  }
+
+  .cta-box h2 {
+    font-size: 30px;
+  }
+
+  .cta-box button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}

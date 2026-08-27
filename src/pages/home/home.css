@@ -1,0 +1,315 @@
+/* =========================================
+   HERO CAR AREA
+========================================= */
+
+.hero-car-area {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND CIRCLE
+========================================= */
+
+.hero-circle {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8f5ff,
+      #cfeaff
+    );
+
+  opacity: .8;
+}
+
+
+/* =========================================
+   CAR
+========================================= */
+
+.hero-car {
+  position: relative;
+
+  z-index: 5;
+
+  width: 480px;
+
+  cursor: grab;
+
+  touch-action: none;
+
+  user-select: none;
+
+  transition:
+    transform .35s ease;
+}
+
+.hero-car.dragging {
+  cursor: grabbing;
+
+  transition: none;
+}
+
+.hero-car img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    drop-shadow(
+      0 25px 20px rgba(0, 0, 0, .18)
+    );
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.hero-car-label {
+  position: absolute;
+
+  top: 50px;
+
+  right: 10px;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  text-align: right;
+
+  opacity: .5;
+}
+
+.hero-car-label span {
+  color: #1688ff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.hero-car-label strong {
+  color: #071a2b;
+
+  font-size: 14px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   SWIPE INSTRUCTION
+========================================= */
+
+.swipe-instruction {
+  position: absolute;
+
+  right: 0;
+
+  bottom: 95px;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 15px;
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,.9);
+
+  color: #344054;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+  pointer-events: none;
+}
+
+.swipe-instruction i {
+  color: #1688ff;
+
+  font-size: 15px;
+
+  animation:
+    moveArrow 1.2s infinite;
+}
+
+@keyframes moveArrow {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(7px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================================
+   SWIPE LINE
+========================================= */
+
+.hero-swipe-line {
+  position: absolute;
+
+  bottom: 35px;
+
+  left: 50%;
+
+  z-index: 3;
+
+  width: 250px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transform: translateX(-50%);
+}
+
+.hero-swipe-line span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #b8d8f3;
+}
+
+.hero-swipe-line small {
+  color: #7c9bb5;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+/* =========================================
+   HERO HEADING
+========================================= */
+
+.hero-section h1 span {
+  color: #1688ff;
+}
+
+.hero-section p {
+  max-width: 520px;
+
+  color: #667085;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO MOBILE
+========================================= */
+
+@media (max-width: 991px) {
+
+  .hero-car-area {
+    min-height: 420px;
+
+    margin-top: 50px;
+  }
+
+  .hero-car {
+    width: 400px;
+  }
+
+  .hero-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+}
+
+
+@media (max-width: 575px) {
+
+  .hero-car-area {
+    min-height: 330px;
+
+    margin-top: 30px;
+  }
+
+  .hero-car {
+    width: 320px;
+  }
+
+  .hero-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-car-label {
+    top: 20px;
+
+    right: 0;
+  }
+
+  .swipe-instruction {
+    bottom: 70px;
+
+    font-size: 9px;
+  }
+
+  .hero-swipe-line {
+    bottom: 20px;
+
+    width: 200px;
+  }
+
+}
