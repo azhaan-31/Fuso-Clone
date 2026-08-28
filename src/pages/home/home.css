@@ -1,17 +1,15 @@
-/* =========================================
-   HERO SECTION
-========================================= */
+/* =====================================
+   HERO
+===================================== */
 
 .hero-section {
   position: relative;
 
-  height: 600px;
-  min-height: 600px;
+  min-height: 650px;
 
   display: flex;
-  align-items: center;
 
-  padding: 40px 0 60px;
+  align-items: center;
 
   overflow: hidden;
 
@@ -19,64 +17,78 @@
 }
 
 
-/* =========================================
-   HERO CONTENT
-========================================= */
+.hero-wrapper {
+  min-height: 560px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =====================================
+   LEFT CONTENT
+===================================== */
 
 .hero-content {
   position: relative;
 
-  z-index: 2;
-
-  max-width: 620px;
+  z-index: 5;
 }
 
 .hero-subtitle {
   display: inline-block;
 
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 
   color: #071a2b;
 
   font-size: 14px;
 
-  font-weight: 700;
+  font-weight: 600;
 }
+
 
 .hero-content h1 {
   margin: 0 0 20px;
 
   color: #071a2b;
 
-  font-size: clamp(45px, 5vw, 68px);
+  font-size: clamp(48px, 5vw, 68px);
 
-  line-height: 1.04;
+  line-height: 1.05;
 
   font-weight: 800;
 
   letter-spacing: -2px;
 }
 
+
 .hero-content h1 span {
   color: #1688ff;
 }
 
+
 .hero-content p {
-  max-width: 560px;
+  max-width: 550px;
 
   margin: 0 0 28px;
 
-  color: #667085;
+  color: #60758a;
 
-  font-size: 16px;
+  font-size: 15px;
 
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 
-/* =========================================
+/* =====================================
    BUTTONS
-========================================= */
+===================================== */
 
 .hero-actions {
   display: flex;
@@ -84,19 +96,22 @@
   align-items: center;
 
   gap: 10px;
+
+  margin-bottom: 35px;
 }
 
 .hero-actions .btn {
   display: inline-flex;
 
   align-items: center;
-  justify-content: center;
 
-  gap: 8px;
+  gap: 10px;
 
   padding: 12px 18px;
 
   border-radius: 7px;
+
+  text-decoration: none;
 
   font-size: 13px;
 
@@ -107,6 +122,8 @@
   background: #1688ff;
 
   border-color: #1688ff;
+
+  color: #ffffff;
 }
 
 .hero-actions .btn-primary:hover {
@@ -115,19 +132,29 @@
   border-color: #071a2b;
 }
 
+.hero-actions .btn-outline-secondary {
+  border: 1px solid #9ba8b5;
 
-/* =========================================
+  color: #4c6073;
+
+  background: #ffffff;
+}
+
+.hero-actions .btn-outline-secondary:hover {
+  border-color: #1688ff;
+
+  color: #1688ff;
+}
+
+
+/* =====================================
    STATS
-========================================= */
+===================================== */
 
 .hero-stats {
   display: flex;
 
-  align-items: center;
-
-  gap: 38px;
-
-  margin-top: 32px;
+  gap: 40px;
 }
 
 .hero-stat {
@@ -135,7 +162,7 @@
 
   flex-direction: column;
 
-  gap: 3px;
+  gap: 5px;
 }
 
 .hero-stat strong {
@@ -147,22 +174,20 @@
 }
 
 .hero-stat span {
-  color: #98a2b3;
+  color: #8a9aad;
 
   font-size: 11px;
 }
 
 
-/* =========================================
-   CAR IMAGE
-========================================= */
+/* =====================================
+   CAR AREA
+===================================== */
 
-.hero-image-wrapper {
+.hero-car-area {
   position: relative;
 
-  width: 100%;
-
-  height: 430px;
+  height: 500px;
 
   display: flex;
 
@@ -171,38 +196,17 @@
   justify-content: center;
 }
 
-.hero-car {
-  position: relative;
 
-  z-index: 2;
+/* =====================================
+   BLUE CIRCLE
+===================================== */
 
-  width: 100%;
-
-  max-width: 650px;
-
-  height: auto;
-
-  object-fit: contain;
-
-  transition: transform 0.5s ease;
-}
-
-.hero-car:hover {
-  transform: translateX(10px) scale(1.02);
-}
-
-
-/* =========================================
-   BLUE GLOW
-========================================= */
-
-.hero-glow {
+.car-circle {
   position: absolute;
 
-  z-index: 0;
+  width: 390px;
 
-  width: 380px;
-  height: 380px;
+  height: 390px;
 
   border-radius: 50%;
 
@@ -210,18 +214,59 @@
 }
 
 
-/* =========================================
-   PERFORMANCE CARD
-========================================= */
+/* =====================================
+   CAR
+===================================== */
 
-.hero-image-info {
+.hero-car {
+  position: relative;
+
+  z-index: 5;
+
+  width: 650px;
+
+  max-width: 110%;
+
+  cursor: grab;
+
+  touch-action: none;
+
+  user-select: none;
+
+  transition: transform 0.35s ease;
+}
+
+.hero-car.dragging {
+  cursor: grabbing;
+
+  transition: none;
+}
+
+.hero-car img {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* =====================================
+   PERFORMANCE CARD
+===================================== */
+
+.performance-card {
   position: absolute;
 
-  z-index: 4;
+  z-index: 8;
 
   right: 0;
 
-  bottom: 15px;
+  bottom: 55px;
 
   display: flex;
 
@@ -229,25 +274,26 @@
 
   gap: 12px;
 
-  padding: 13px 17px;
+  padding: 13px 18px;
 
-  border: 1px solid #e5edf5;
+  background: #ffffff;
+
+  border: 1px solid #e3ebf2;
 
   border-radius: 12px;
 
-  background: rgba(255, 255, 255, 0.96);
-
-  box-shadow:
-    0 12px 30px rgba(7, 26, 43, 0.08);
+  box-shadow: 0 15px 35px rgba(7, 26, 43, 0.10);
 }
 
-.hero-info-icon {
-  width: 38px;
-  height: 38px;
+.performance-icon {
+  width: 36px;
+
+  height: 36px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 9px;
@@ -257,97 +303,117 @@
   color: #1688ff;
 }
 
-.hero-image-info > div:last-child {
-  display: flex;
+.performance-card strong {
+  display: block;
 
-  flex-direction: column;
-
-  gap: 3px;
-}
-
-.hero-image-info strong {
   color: #071a2b;
 
   font-size: 12px;
 }
 
-.hero-image-info span {
-  color: #98a2b3;
+.performance-card span {
+  display: block;
 
-  font-size: 10px;
+  margin-top: 3px;
+
+  color: #91a0b0;
+
+  font-size: 9px;
 }
 
 
-/* =========================================
-   SCROLL
-========================================= */
+/* =====================================
+   DRAG HINT
+===================================== */
 
-.hero-scroll {
+.drag-hint {
   position: absolute;
 
-  left: 50%;
+  z-index: 10;
 
-  bottom: 50px;
+  right: 30px;
 
-  transform: translateX(-50%);
+  bottom: -5px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 
-  color: #667085;
+  color: #1688ff;
 
   font-size: 11px;
 
-  font-weight: 500;
+  font-weight: 600;
 
-  z-index: 5;
+  animation: dragHint 1.8s infinite;
 }
 
-.hero-scroll i {
-  color: #1688ff;
 
-  font-size: 14px;
-
-  animation: scrollArrow 1.5s infinite;
-}
-
-@keyframes scrollArrow {
+@keyframes dragHint {
 
   0% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   50% {
-    transform: translateY(5px);
+    transform: translateX(8px);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
 }
 
 
-/* =========================================
+/* =====================================
+   SCROLL
+===================================== */
+
+.scroll-explore {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding-bottom: 20px;
+
+  color: #7f91a4;
+
+  font-size: 11px;
+}
+
+.scroll-explore i {
+  color: #1688ff;
+
+  font-size: 15px;
+}
+
+
+/* =====================================
    TABLET
-========================================= */
+===================================== */
 
 @media (max-width: 991px) {
 
   .hero-section {
-    height: auto;
+    min-height: auto;
+  }
 
-    min-height: 850px;
+  .hero-wrapper {
+    grid-template-columns: 1fr;
 
-    padding: 70px 0 100px;
+    padding-top: 60px;
+
+    padding-bottom: 30px;
   }
 
   .hero-content {
-    max-width: 100%;
-
     text-align: center;
   }
 
@@ -365,25 +431,33 @@
     justify-content: center;
   }
 
-  .hero-image-wrapper {
-    height: 400px;
+  .hero-car-area {
+    height: 420px;
+  }
 
-    margin-top: 20px;
+  .hero-car {
+    width: 600px;
+  }
+
+  .performance-card {
+    right: 10%;
+  }
+
+  .drag-hint {
+    right: 15%;
   }
 
 }
 
 
-/* =========================================
+/* =====================================
    MOBILE
-========================================= */
+===================================== */
 
 @media (max-width: 576px) {
 
-  .hero-section {
-    min-height: 850px;
-
-    padding: 55px 0 90px;
+  .hero-wrapper {
+    padding-top: 40px;
   }
 
   .hero-content h1 {
@@ -398,37 +472,56 @@
 
   .hero-actions {
     flex-direction: column;
+
+    width: 100%;
   }
 
   .hero-actions .btn {
     width: 100%;
+
+    justify-content: center;
   }
 
   .hero-stats {
-    gap: 20px;
+    gap: 25px;
   }
 
-  .hero-image-wrapper {
+  .hero-car-area {
     height: 300px;
-
-    margin-top: 20px;
   }
 
-  .hero-glow {
-    width: 280px;
-    height: 280px;
+  .car-circle {
+    width: 270px;
+
+    height: 270px;
   }
 
-  .hero-image-info {
+  .hero-car {
+    width: 450px;
+
+    max-width: 140%;
+  }
+
+  .performance-card {
     right: 0;
 
-    bottom: 0;
+    bottom: 20px;
 
-    padding: 10px 12px;
+    padding: 9px 12px;
   }
 
-  .hero-scroll {
-    display: none;
+  .performance-card strong {
+    font-size: 10px;
+  }
+
+  .performance-card span {
+    font-size: 8px;
+  }
+
+  .drag-hint {
+    right: 0;
+
+    bottom: -15px;
   }
 
 }

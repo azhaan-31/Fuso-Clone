@@ -1,82 +1,186 @@
-import { Link } from 'react-router-dom';
-import './home.css';
+import { useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import './Home.css';
 
 import carImage from '../../assets/images/car.png';
 
 function Home() {
+
+  const navigate = useNavigate();
+
+  const carRef = useRef(null);
+
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragX, setDragX] = useState(0);
+
+  const startX = useRef(0);
+
+  const handlePointerDown = (e) => {
+
+    setIsDragging(true);
+
+    startX.current = e.clientX - dragX;
+
+    carRef.current?.setPointerCapture(e.pointerId);
+  };
+
+
+  const handlePointerMove = (e) => {
+
+    if (!isDragging) {
+      return;
+    }
+
+    let newX = e.clientX - startX.current;
+
+    // Limit dragging
+    if (newX < -80) {
+      newX = -80;
+    }
+
+    if (newX > 350) {
+      newX = 350;
+    }
+
+    setDragX(newX);
+  };
+
+
+  const handlePointerUp = () => {
+
+    setIsDragging(false);
+
+    // If dragged far enough → Vehicles page
+    if (dragX > 180) {
+
+      setDragX(500);
+
+      setTimeout(() => {
+        navigate('/vehicles');
+      }, 350);
+
+    } else {
+
+      // Return car to original position
+      setDragX(0);
+    }
+  };
+
+
   return (
+
     <div className="home-page">
 
-      {/* ================================
-          HERO SECTION
-      ================================= */}
+      {/* ==============================
+          HERO
+      ============================== */}
 
       <section className="hero-section">
 
         <div className="container">
 
-          <div className="row align-items-center">
+          <div className="hero-wrapper">
 
-            {/* LEFT CONTENT */}
 
-            <div className="col-lg-6">
+            {/* ==============================
+                LEFT CONTENT
+            ============================== */}
 
-              <div className="hero-content">
+            <div className="hero-content">
 
-                <span className="hero-subtitle">
-                  ✦ Welcome to Fuso
+              <span className="hero-subtitle">
+                ✦ Welcome to Fuso
+              </span>
+
+
+              <h1>
+
+                Built to move.
+
+                <br />
+
+                <span>
+                  Built for you.
                 </span>
 
-                <h1>
-                  Built to move.
-                  <br />
-                  <span>Built for you.</span>
-                </h1>
+              </h1>
 
-                <p>
-                  Powerful vehicles, smart solutions
-                  and reliable services designed to
-                  keep your business moving forward.
-                </p>
 
-                <div className="hero-actions">
+              <p>
 
-                  <Link
-                    to="/vehicles"
-                    className="btn btn-primary"
-                  >
-                    Explore Vehicles
-                    <i className="bi bi-arrow-right"></i>
-                  </Link>
+                Powerful vehicles, smart solutions
+                and reliable services designed to keep
+                your business moving forward.
 
-                  <Link
-                    to="/about"
-                    className="btn btn-outline-secondary"
-                  >
-                    Learn More
-                  </Link>
+              </p>
+
+
+              <div className="hero-actions">
+
+                <Link
+                  to="/vehicles"
+                  className="btn btn-primary"
+                >
+
+                  Explore Vehicles
+
+                  <i className="bi bi-arrow-right"></i>
+
+                </Link>
+
+
+                <Link
+                  to="/about"
+                  className="btn btn-outline-secondary"
+                >
+
+                  Learn More
+
+                </Link>
+
+              </div>
+
+
+              {/* STATS */}
+
+              <div className="hero-stats">
+
+                <div className="hero-stat">
+
+                  <strong>
+                    10K+
+                  </strong>
+
+                  <span>
+                    Happy Users
+                  </span>
 
                 </div>
 
 
-                {/* HERO STATS */}
+                <div className="hero-stat">
 
-                <div className="hero-stats">
+                  <strong>
+                    98%
+                  </strong>
 
-                  <div className="hero-stat">
-                    <strong>10K+</strong>
-                    <span>Happy Users</span>
-                  </div>
+                  <span>
+                    Satisfaction
+                  </span>
 
-                  <div className="hero-stat">
-                    <strong>98%</strong>
-                    <span>Satisfaction</span>
-                  </div>
+                </div>
 
-                  <div className="hero-stat">
-                    <strong>24/7</strong>
-                    <span>Support</span>
-                  </div>
+
+                <div className="hero-stat">
+
+                  <strong>
+                    24/7
+                  </strong>
+
+                  <span>
+                    Support
+                  </span>
 
                 </div>
 
@@ -85,37 +189,80 @@ function Home() {
             </div>
 
 
-            {/* RIGHT CAR */}
+            {/* ==============================
+                RIGHT CAR
+            ============================== */}
 
-            <div className="col-lg-6">
+            <div className="hero-car-area">
 
-              <div className="hero-image-wrapper">
 
-                <div className="hero-glow"></div>
+              <div className="car-circle"></div>
+
+
+              <div
+                ref={carRef}
+
+                className={`hero-car ${
+                  isDragging ? 'dragging' : ''
+                }`}
+
+                style={{
+                  transform: `translateX(${dragX}px)`
+                }}
+
+                onPointerDown={handlePointerDown}
+
+                onPointerMove={handlePointerMove}
+
+                onPointerUp={handlePointerUp}
+
+                onPointerCancel={handlePointerUp}
+
+              >
 
                 <img
                   src={carImage}
                   alt="Fuso vehicle"
-                  className="hero-car"
+                  draggable="false"
                 />
 
-                <div className="hero-image-info">
+              </div>
 
-                  <div className="hero-info-icon">
-                    <i className="bi bi-lightning-charge-fill"></i>
-                  </div>
 
-                  <div>
-                    <strong>
-                      Premium Performance
-                    </strong>
+              {/* PERFORMANCE CARD */}
 
-                    <span>
-                      Built for excellence
-                    </span>
-                  </div>
+              <div className="performance-card">
+
+                <div className="performance-icon">
+
+                  <i className="bi bi-lightning-fill"></i>
 
                 </div>
+
+                <div>
+
+                  <strong>
+                    Premium Performance
+                  </strong>
+
+                  <span>
+                    Built for excellence
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              {/* DRAG MESSAGE */}
+
+              <div className="drag-hint">
+
+                {/* <i className="bi bi-arrows"></i> */}
+
+                <span>
+                  Drag the car →
+                </span>
 
               </div>
 
@@ -123,26 +270,24 @@ function Home() {
 
           </div>
 
+
+          {/* SCROLL */}
+
+          <div className="scroll-explore">
+
+            Scroll to explore
+
+            <i className="bi bi-arrow-down"></i>
+
+          </div>
+
         </div>
-
-
-        {/* SCROLL TEXT */}
-
-      {/* SCROLL TEXT */}
-
-<div className="hero-scroll">
-
-  <span>
-    Scroll to explore
-  </span>
-
-  <i className="bi bi-arrow-down"></i>
-
-</div>
 
       </section>
 
+
     </div>
+
   );
 }
 
