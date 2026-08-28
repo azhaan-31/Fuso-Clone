@@ -1,10 +1,44 @@
+import { useState } from 'react';
 import './Contact.css';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setSubmitted(true);
+
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
+  };
+
   return (
     <div className="contact-page">
 
-      {/* Hero */}
+      {/* =====================================
+          HERO
+      ===================================== */}
 
       <section className="contact-hero">
 
@@ -12,19 +46,19 @@ function Contact() {
 
           <div className="contact-hero-content">
 
-            <span className="page-label">
-              <i className="bi bi-chat-dots"></i>
-              Contact Us
+            <span>
+              CONTACT US
             </span>
 
             <h1>
               Let's start a
-              <span> conversation.</span>
+              <br />
+              <strong>conversation.</strong>
             </h1>
 
             <p>
-              Have a question or need help?
-              We'd love to hear from you.
+              Have a question about our vehicles or
+              services? Our team is ready to help.
             </p>
 
           </div>
@@ -34,7 +68,9 @@ function Contact() {
       </section>
 
 
-      {/* Contact Area */}
+      {/* =====================================
+          CONTACT CONTENT
+      ===================================== */}
 
       <section className="contact-section">
 
@@ -42,75 +78,125 @@ function Contact() {
 
           <div className="row g-5">
 
-            {/* Contact Information */}
+            {/* LEFT SIDE */}
 
             <div className="col-lg-5">
 
               <div className="contact-info">
 
                 <span className="contact-label">
-                  Get In Touch
+                  GET IN TOUCH
                 </span>
 
                 <h2>
-                  We're ready
+                  We're here to
                   <br />
-                  to help.
+                  help.
                 </h2>
 
                 <p>
-                  Whether you have a question about our
-                  vehicles, services or anything else,
-                  our team is ready to help.
+                  Whether you need information about a
+                  vehicle, service support or anything
+                  else, feel free to reach out to us.
                 </p>
 
 
-                <div className="contact-details">
+                {/* Address */}
 
-                  <div className="contact-detail">
+                <div className="contact-info-item">
 
-                    <div className="contact-detail-icon">
-                      <i className="bi bi-envelope"></i>
-                    </div>
+                  <div className="contact-info-icon">
 
-                    <div>
-                      <span>Email</span>
-                      <strong>
-                        hello@fuso.com
-                      </strong>
-                    </div>
+                    <i className="bi bi-geo-alt"></i>
 
                   </div>
 
+                  <div>
 
-                  <div className="contact-detail">
+                    <span>
+                      Visit Us
+                    </span>
 
-                    <div className="contact-detail-icon">
-                      <i className="bi bi-telephone"></i>
-                    </div>
-
-                    <div>
-                      <span>Phone</span>
-                      <strong>
-                        +1 800 123 4567
-                      </strong>
-                    </div>
+                    <strong>
+                      123 Business Street
+                      <br />
+                      Chennai, India
+                    </strong>
 
                   </div>
 
+                </div>
 
-                  <div className="contact-detail">
 
-                    <div className="contact-detail-icon">
-                      <i className="bi bi-geo-alt"></i>
-                    </div>
+                {/* Phone */}
 
-                    <div>
-                      <span>Location</span>
-                      <strong>
-                        123 Business Avenue
-                      </strong>
-                    </div>
+                <div className="contact-info-item">
+
+                  <div className="contact-info-icon">
+
+                    <i className="bi bi-telephone"></i>
+
+                  </div>
+
+                  <div>
+
+                    <span>
+                      Call Us
+                    </span>
+
+                    <strong>
+                      +91 12345 67890
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                {/* Email */}
+
+                <div className="contact-info-item">
+
+                  <div className="contact-info-icon">
+
+                    <i className="bi bi-envelope"></i>
+
+                  </div>
+
+                  <div>
+
+                    <span>
+                      Email Us
+                    </span>
+
+                    <strong>
+                      info@fuso.com
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                {/* Hours */}
+
+                <div className="contact-info-item">
+
+                  <div className="contact-info-icon">
+
+                    <i className="bi bi-clock"></i>
+
+                  </div>
+
+                  <div>
+
+                    <span>
+                      Business Hours
+                    </span>
+
+                    <strong>
+                      Mon - Sat: 9:00 AM - 6:00 PM
+                    </strong>
 
                   </div>
 
@@ -121,55 +207,66 @@ function Contact() {
             </div>
 
 
-            {/* Contact Form */}
+            {/* RIGHT SIDE FORM */}
 
             <div className="col-lg-7">
 
-              <div className="contact-form-card">
+              <div className="contact-form-box">
 
-                <h3>
-                  Send us a message
-                </h3>
+                <div className="form-heading">
 
-                <p>
-                  Fill out the form and we'll get back
-                  to you as soon as possible.
-                </p>
+                  <span>
+                    SEND A MESSAGE
+                  </span>
+
+                  <h2>
+                    How can we help?
+                  </h2>
+
+                </div>
 
 
-                <form>
+                {submitted && (
 
-                  <div className="row g-3">
+                  <div className="success-message">
+
+                    <i className="bi bi-check-circle"></i>
+
+                    Thank you! Your message has
+                    been submitted successfully.
+
+                  </div>
+
+                )}
+
+
+                <form onSubmit={handleSubmit}>
+
+                  <div className="row g-4">
+
+                    {/* Name */}
 
                     <div className="col-md-6">
 
                       <label>
-                        First Name
+                        Your Name
                       </label>
 
                       <input
                         type="text"
-                        placeholder="Your first name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Enter your name"
+                        required
                       />
 
                     </div>
 
 
+                    {/* Email */}
+
                     <div className="col-md-6">
-
-                      <label>
-                        Last Name
-                      </label>
-
-                      <input
-                        type="text"
-                        placeholder="Your last name"
-                      />
-
-                    </div>
-
-
-                    <div className="col-12">
 
                       <label>
                         Email Address
@@ -177,25 +274,36 @@ function Contact() {
 
                       <input
                         type="email"
-                        placeholder="you@example.com"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email"
+                        required
                       />
 
                     </div>
 
+
+                    {/* Phone */}
 
                     <div className="col-12">
 
                       <label>
-                        Subject
+                        Phone Number
                       </label>
 
                       <input
-                        type="text"
-                        placeholder="How can we help?"
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Enter your phone number"
                       />
 
                     </div>
 
+
+                    {/* Message */}
 
                     <div className="col-12">
 
@@ -204,17 +312,25 @@ function Contact() {
                       </label>
 
                       <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell us how we can help..."
                         rows="5"
-                        placeholder="Write your message..."
+                        required
                       ></textarea>
 
                     </div>
 
 
+                    {/* Submit */}
+
                     <div className="col-12">
 
-                      <button type="submit">
-
+                      <button
+                        type="submit"
+                        className="contact-submit"
+                      >
                         Send Message
 
                         <i className="bi bi-arrow-right"></i>
@@ -228,6 +344,46 @@ function Contact() {
                 </form>
 
               </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================
+          MAP
+      ===================================== */}
+
+      <section className="contact-map-section">
+
+        <div className="container">
+
+          <div className="contact-map">
+
+            <div className="map-content">
+
+              <div className="map-pin">
+
+                <i className="bi bi-geo-alt-fill"></i>
+
+              </div>
+
+              <h3>
+                Find us here
+              </h3>
+
+              <p>
+                Chennai, India
+              </p>
+
+              <button>
+                Get Directions
+                <i className="bi bi-arrow-up-right"></i>
+              </button>
 
             </div>
 

@@ -1,204 +1,119 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
   return (
     <footer className="main-footer">
 
-      {/* =================================
-          FOOTER TOP
-      ================================= */}
+      <div className="container">
 
-      <div className="footer-top">
+        <div className="footer-top">
 
-        <div className="container">
+          {/* Brand */}
 
-          <div className="row g-5">
+          <div className="footer-brand">
 
-            {/* Brand */}
+            <Link to="/" className="footer-logo">
+              <span>F</span>
+              FUSO
+            </Link>
 
-            <div className="col-lg-4">
+            <p>
+              Powerful vehicles and smart solutions
+              built to keep your business moving
+              forward.
+            </p>
 
-              <a
-                href="/"
-                className="footer-logo"
-              >
+            <div className="footer-social">
 
-                <span className="footer-logo-icon">
-                  F
-                </span>
-
-                <span>
-                  FUSO
-                </span>
-
+              <a href="#facebook">
+                <i className="bi bi-facebook"></i>
               </a>
 
-              <p className="footer-description">
-                Building modern solutions that help
-                businesses work smarter, move faster
-                and achieve more.
-              </p>
+              <a href="#instagram">
+                <i className="bi bi-instagram"></i>
+              </a>
 
-
-              {/* Social Icons */}
-
-              <div className="footer-social">
-
-                <a href="#" aria-label="Facebook">
-                  <i className="bi bi-facebook"></i>
-                </a>
-
-                <a href="#" aria-label="Instagram">
-                  <i className="bi bi-instagram"></i>
-                </a>
-
-                <a href="#" aria-label="LinkedIn">
-                  <i className="bi bi-linkedin"></i>
-                </a>
-
-                <a href="#" aria-label="Twitter">
-                  <i className="bi bi-twitter-x"></i>
-                </a>
-
-              </div>
+              <a href="#linkedin">
+                <i className="bi bi-linkedin"></i>
+              </a>
 
             </div>
 
-
-            {/* Company */}
-
-            <div className="col-6 col-lg-2">
-
-              <div className="footer-column">
-
-                <h3>
-                  Company
-                </h3>
-
-                <a href="/">
-                  Home
-                </a>
-
-                <a href="/about">
-                  About
-                </a>
-
-                <a href="#">
-                  Vehicles
-                </a>
-
-                <a href="#">
-                  Services
-                </a>
-
-              </div>
-
-            </div>
+          </div>
 
 
-            {/* Support */}
+          {/* Quick Links */}
 
-            <div className="col-6 col-lg-2">
+          <div className="footer-column">
 
-              <div className="footer-column">
+            <h4>Quick Links</h4>
 
-                <h3>
-                  Support
-                </h3>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/vehicles">Vehicles</Link>
+            <Link to="/services">Services</Link>
 
-                <a href="#">
-                  Contact
-                </a>
-
-                <a href="#">
-                  Help Center
-                </a>
-
-                <a href="#">
-                  FAQ
-                </a>
-
-                <a href="#">
-                  Privacy
-                </a>
-
-              </div>
-
-            </div>
+          </div>
 
 
-            {/* Contact */}
+          {/* Support */}
 
-            <div className="col-lg-4">
+          <div className="footer-column">
 
-              <div className="footer-column">
+            <h4>Support</h4>
 
-                <h3>
-                  Get in touch
-                </h3>
+            <Link to="/contact">Contact Us</Link>
+            <Link to="/login">Login</Link>
 
-                <p className="footer-contact">
-                  Have questions or want to know more?
-                  Our team is here to help.
-                </p>
+            <a href="#privacy">
+              Privacy Policy
+            </a>
 
+            <a href="#terms">
+              Terms & Conditions
+            </a>
 
-                <a
-                  href="mailto:hello@fuso.com"
-                  className="footer-email"
-                >
-                  hello@fuso.com
-                </a>
+          </div>
 
 
-                <a
-                  href="#"
-                  className="footer-contact-button"
-                >
-                  Contact Us
+          {/* Contact */}
 
-                  <i className="bi bi-arrow-right"></i>
+          <div className="footer-column">
 
-                </a>
+            <h4>Contact</h4>
 
-              </div>
+            <p>
+              <i className="bi bi-geo-alt"></i>
+              Your Location
+            </p>
 
-            </div>
+            <p>
+              <i className="bi bi-telephone"></i>
+              +91 12345 67890
+            </p>
+
+            <p>
+              <i className="bi bi-envelope"></i>
+              info@fuso.com
+            </p>
 
           </div>
 
         </div>
 
-      </div>
 
+        {/* Bottom */}
 
-      {/* =================================
-          FOOTER BOTTOM
-      ================================= */}
+        <div className="footer-bottom">
 
-      <div className="footer-bottom">
+          <p>
+            © 2026 FUSO. All rights reserved.
+          </p>
 
-        <div className="container">
-
-          <div className="footer-bottom-inner">
-
-            <p>
-              © 2026 Fuso. All rights reserved.
-            </p>
-
-            <div className="footer-bottom-links">
-
-              <a href="#">
-                Privacy Policy
-              </a>
-
-              <a href="#">
-                Terms of Service
-              </a>
-
-            </div>
-
-          </div>
+          <p>
+            Built with React
+          </p>
 
         </div>
 

@@ -1,18 +1,15 @@
 /* =========================================
-   SERVICES HERO
+   HERO
 ========================================= */
 
 .services-hero {
-  min-height: 430px;
-
-  display: flex;
-  align-items: center;
+  padding: 100px 0;
 
   background:
     linear-gradient(
-      120deg,
-      #061522,
-      #0d3557
+      135deg,
+      #071a2b,
+      #123c5d
     );
 
   color: #ffffff;
@@ -22,24 +19,40 @@
   max-width: 750px;
 }
 
-.services-hero h1 {
-  margin-bottom: 22px;
+.services-hero-content > span {
+  display: inline-block;
 
-  font-size: clamp(48px, 6vw, 70px);
+  margin-bottom: 18px;
 
-  line-height: 1;
+  color: #1688ff;
 
-  letter-spacing: -3px;
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
 }
 
-.services-hero h1 span {
-  color: #55adff;
+.services-hero h1 {
+  margin: 0 0 25px;
+
+  font-size: clamp(42px, 6vw, 68px);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+}
+
+.services-hero h1 strong {
+  color: #1688ff;
 }
 
 .services-hero p {
-  max-width: 650px;
+  max-width: 600px;
 
-  color: rgba(255,255,255,.65);
+  margin: 0;
+
+  color: #bdcad6;
 
   font-size: 17px;
 
@@ -53,34 +66,48 @@
 
 .services-section {
   padding: 100px 0;
+
+  background: #f7faff;
 }
 
 .services-heading {
-  margin-bottom: 50px;
+  max-width: 650px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
 }
 
-.services-heading > span {
+.services-heading > span,
+.process-heading > span {
   color: #1688ff;
 
-  font-size: 13px;
+  font-size: 11px;
 
   font-weight: 700;
 
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
-.services-heading h2 {
-  margin-top: 12px;
+.services-heading h2,
+.process-heading h2 {
+  margin: 10px 0 15px;
 
-  color: #101828;
+  color: #071a2b;
 
-  font-size: clamp(38px, 5vw, 52px);
+  font-size: 42px;
 
-  line-height: 1.1;
+  font-weight: 800;
+}
 
-  letter-spacing: -2px;
+.services-heading p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.8;
 }
 
 
@@ -91,11 +118,11 @@
 .service-card {
   height: 100%;
 
-  padding: 35px;
+  padding: 32px;
 
-  border: 1px solid #e9eef5;
+  border: 1px solid #e5edf5;
 
-  border-radius: 15px;
+  border-radius: 18px;
 
   background: #ffffff;
 
@@ -103,17 +130,132 @@
 }
 
 .service-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-8px);
 
-  border-color: #cce6ff;
+  border-color: #b9ddff;
 
   box-shadow:
-    0 20px 45px rgba(16,24,40,.08);
+    0 20px 45px rgba(7, 26, 43, .09);
+}
+
+.service-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.service-number {
+  color: #c5d2df;
+
+  font-size: 13px;
+
+  font-weight: 800;
 }
 
 .service-icon {
-  width: 58px;
-  height: 58px;
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #eaf5ff;
+
+  color: #1688ff;
+
+  font-size: 22px;
+}
+
+.service-card h3 {
+  margin-bottom: 12px;
+
+  color: #071a2b;
+
+  font-size: 21px;
+
+  font-weight: 800;
+}
+
+.service-card p {
+  min-height: 72px;
+
+  margin-bottom: 25px;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+.service-card a {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #1688ff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.service-card a i {
+  transition: transform .2s ease;
+}
+
+.service-card a:hover {
+  color: #071a2b;
+}
+
+.service-card a:hover i {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.service-process {
+  padding: 100px 0;
+
+  background: #ffffff;
+}
+
+.process-heading {
+  margin-bottom: 50px;
+
+  text-align: center;
+}
+
+.process-card {
+  position: relative;
+
+  height: 100%;
+
+  padding: 35px;
+
+  border-radius: 16px;
+
+  background: #f7faff;
+}
+
+.process-number {
+  width: 45px;
+  height: 45px;
 
   display: flex;
 
@@ -122,47 +264,35 @@
 
   margin-bottom: 25px;
 
-  border-radius: 12px;
+  border-radius: 50%;
 
-  background: #eaf4ff;
+  background: #1688ff;
 
-  color: #1688ff;
+  color: #ffffff;
 
-  font-size: 25px;
+  font-size: 16px;
+
+  font-weight: 800;
 }
 
-.service-card h3 {
+.process-card h3 {
   margin-bottom: 12px;
 
-  color: #101828;
+  color: #071a2b;
 
   font-size: 20px;
+
+  font-weight: 800;
 }
 
-.service-card p {
-  margin-bottom: 20px;
+.process-card p {
+  margin: 0;
 
   color: #667085;
 
   font-size: 14px;
 
-  line-height: 1.7;
-}
-
-.service-card a {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  color: #1688ff;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  text-decoration: none;
+  line-height: 1.75;
 }
 
 
@@ -171,7 +301,7 @@
 ========================================= */
 
 .services-cta {
-  padding: 0 0 90px;
+  padding: 90px 0;
 }
 
 .services-cta-box {
@@ -183,60 +313,43 @@
 
   gap: 30px;
 
-  padding: 55px 60px;
+  padding: 55px;
 
   border-radius: 20px;
 
-  background:
-    linear-gradient(
-      120deg,
-      #071a2b,
-      #0d3d66
-    );
+  background: #071a2b;
 
   color: #ffffff;
 }
 
-.services-cta-box span {
-  color: #55adff;
+.services-cta-box > div > span {
+  color: #1688ff;
 
-  font-size: 12px;
+  font-size: 11px;
 
   font-weight: 700;
 
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .services-cta-box h2 {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
 
-  font-size: 38px;
+  font-size: 37px;
 
   line-height: 1.15;
+
+  font-weight: 800;
 }
 
-.services-cta-box a {
-  display: inline-flex;
+.services-cta-box .btn {
+  display: flex;
 
   align-items: center;
 
   gap: 10px;
 
-  padding: 15px 22px;
-
-  border-radius: 7px;
-
-  background: #1688ff;
-
-  color: #ffffff;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  text-decoration: none;
+  padding: 13px 22px;
 }
 
 
@@ -244,14 +357,20 @@
    MOBILE
 ========================================= */
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 
-  .services-hero h1 {
-    font-size: 45px;
+  .services-hero {
+    padding: 75px 0;
   }
 
-  .services-section {
+  .services-section,
+  .service-process {
     padding: 70px 0;
+  }
+
+  .services-heading h2,
+  .process-heading h2 {
+    font-size: 34px;
   }
 
   .services-cta-box {
@@ -259,11 +378,11 @@
 
     align-items: flex-start;
 
-    padding: 35px 25px;
+    padding: 35px;
   }
 
   .services-cta-box h2 {
-    font-size: 30px;
+    font-size: 29px;
   }
 
 }

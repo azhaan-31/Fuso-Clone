@@ -1,8 +1,9 @@
+import { NavLink, Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
   return (
-    <header className="main-header">
+    <header className="site-header">
 
       <div className="container">
 
@@ -10,68 +11,66 @@ function Header() {
 
           {/* Logo */}
 
-          <a href="/" className="site-logo">
+          <Link to="/" className="brand">
 
-            <span className="logo-icon">
+            <span className="brand-icon">
               F
             </span>
 
-            <span className="logo-text">
+            <span className="brand-name">
               FUSO
             </span>
 
-          </a>
+          </Link>
 
 
           {/* Navigation */}
 
-          <nav className="main-navigation">
+          <nav className="main-nav">
 
-            <a href="/" className="nav-link">
+            <NavLink
+              to="/"
+              end
+            >
               Home
-            </a>
+            </NavLink>
 
-            <a href="/about" className="nav-link">
+            <NavLink
+              to="/about"
+            >
               About
-            </a>
+            </NavLink>
 
-            <a href="/vehicles" className="nav-link">
+            <NavLink
+              to="/vehicles"
+            >
               Vehicles
-            </a>
+            </NavLink>
 
-            <a href="/services" className="nav-link">
+            <NavLink
+              to="/services"
+            >
               Services
-            </a>
+            </NavLink>
 
-            <a href="/contact" className="nav-link">
+            <NavLink
+              to="/contact"
+            >
               Contact
-            </a>
+            </NavLink>
 
           </nav>
 
 
-          {/* Header Actions */}
+          {/* Login */}
 
-          <div className="header-actions">
-             <a
-    href="/login"
-    className="header-button"
-  >
-    Login
-
-    <i className="bi bi-box-arrow-in-right"></i>
-  </a>
-          </div>
-
-
-          {/* Mobile Menu */}
-
-          <button
-            className="mobile-menu-button"
-            type="button"
+          <Link
+            to="/login"
+            className="header-login-button"
           >
-            <i className="bi bi-list"></i>
-          </button>
+            Login
+            <i className="bi bi-arrow-right"></i>
+          </Link>
 
         </div>
 

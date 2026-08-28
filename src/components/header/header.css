@@ -1,63 +1,65 @@
-/* =========================================
+/* =====================================
    HEADER
-========================================= */
+===================================== */
 
-.main-header {
-  position: relative;
-
-  z-index: 1000;
-
+.site-header {
   width: 100%;
+
+  height: 82px;
+
+  display: flex;
+  align-items: center;
 
   background: #ffffff;
 
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #edf1f5;
+
+  position: relative;
+
+  z-index: 100;
 }
 
 
-/* =========================================
+/* =====================================
    HEADER INNER
-========================================= */
+===================================== */
 
 .header-inner {
-  min-height: 78px;
+  height: 82px;
 
   display: flex;
-
   align-items: center;
 
   justify-content: space-between;
-
-  gap: 30px;
 }
 
 
-/* =========================================
+/* =====================================
    LOGO
-========================================= */
+===================================== */
 
-.site-logo {
-  display: inline-flex;
+.brand {
+  display: flex;
 
   align-items: center;
 
   gap: 10px;
 
-  color: #071a2b;
-
   text-decoration: none;
+
+  flex-shrink: 0;
 }
 
-.logo-icon {
-  width: 38px;
-  height: 38px;
+.brand-icon {
+  width: 36px;
+  height: 36px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  border-radius: 8px;
+  border-radius: 9px;
 
   background: #1688ff;
 
@@ -66,12 +68,12 @@
   font-size: 20px;
 
   font-weight: 800;
-
-  font-style: italic;
 }
 
-.logo-text {
-  font-size: 22px;
+.brand-name {
+  color: #071a2b;
+
+  font-size: 21px;
 
   font-weight: 800;
 
@@ -79,11 +81,15 @@
 }
 
 
-/* =========================================
+/* =====================================
    NAVIGATION
-========================================= */
+===================================== */
 
-.main-navigation {
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.main-nav {
   display: flex;
 
   align-items: center;
@@ -91,14 +97,20 @@
   gap: 32px;
 
   margin-left: auto;
+
+  margin-right: 35px;
 }
 
-.nav-link {
+.main-nav a {
   position: relative;
 
-  padding: 28px 0;
+  display: inline-flex;
 
-  color: #475467;
+  align-items: center;
+
+  height: 82px;
+
+  color: #071a2b;
 
   font-size: 14px;
 
@@ -106,81 +118,81 @@
 
   text-decoration: none;
 
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
-.nav-link::after {
-  content: '';
+
+/* =====================================
+   UNDERLINE
+===================================== */
+
+.main-nav a::after {
+  content: "";
 
   position: absolute;
 
   left: 0;
+
   bottom: 20px;
 
   width: 0;
+
   height: 2px;
 
-  border-radius: 5px;
+  border-radius: 10px;
 
   background: #1688ff;
 
-  transition: width 0.3s ease;
+  transition: width 0.25s ease;
 }
 
-.nav-link:hover {
+
+/* =====================================
+   HOVER
+===================================== */
+
+.main-nav a:hover {
   color: #1688ff;
 }
 
-.nav-link:hover::after {
+.main-nav a:hover::after {
   width: 100%;
 }
 
 
-/* =========================================
-   HEADER ACTIONS
-========================================= */
+/* =====================================
+   ACTIVE PAGE
+===================================== */
 
-.header-actions {
-  display: flex;
-
-  align-items: center;
-
-  gap: 20px;
-}
-
-.login-link {
-  color: #344054;
-
-  font-size: 14px;
+.main-nav a.active {
+  color: #1688ff;
 
   font-weight: 600;
-
-  text-decoration: none;
-
-  transition: color 0.3s ease;
 }
 
-.login-link:hover {
-  color: #1688ff;
+.main-nav a.active::after {
+  width: 100%;
 }
 
 
-/* =========================================
-   HEADER BUTTON
-========================================= */
+/* =====================================
+   LOGIN BUTTON
+===================================== */
 
-.header-button {
+.header-login-button {
   display: inline-flex;
 
   align-items: center;
 
+  justify-content: center;
+
   gap: 8px;
 
-  height: 42px;
+  min-width: 120px;
 
-  padding: 0 18px;
+  padding: 11px 20px;
 
-  border-radius: 6px;
+  border-radius: 8px;
 
   background: #1688ff;
 
@@ -188,98 +200,99 @@
 
   font-size: 13px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   text-decoration: none;
 
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+
+  flex-shrink: 0;
 }
 
-.header-button:hover {
-  background: #0879ed;
+.header-login-button:hover {
+  background: #071a2b;
 
   color: #ffffff;
 
   transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 20px rgba(22, 136, 255, 0.25);
 }
 
-.header-button i {
-  transition: transform 0.3s ease;
-}
-
-.header-button:hover i {
-  transform: translateX(3px);
+.header-login-button i {
+  font-size: 13px;
 }
 
 
-/* =========================================
-   MOBILE BUTTON
-========================================= */
-
-.mobile-menu-button {
-  display: none;
-
-  width: 42px;
-  height: 42px;
-
-  border: 1px solid #e4e7ec;
-
-  border-radius: 6px;
-
-  background: #ffffff;
-
-  color: #344054;
-
-  font-size: 22px;
-
-  cursor: pointer;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 991px) {
 
-  .main-navigation {
+  .main-nav {
     gap: 18px;
+
+    margin-right: 18px;
   }
 
-  .header-actions {
-    gap: 12px;
-  }
-
-  .header-button {
-    padding: 0 14px;
+  .main-nav a {
+    font-size: 13px;
   }
 
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
   .header-inner {
-    min-height: 68px;
+    height: auto;
+
+    min-height: 82px;
+
+    flex-wrap: wrap;
+
+    padding: 15px 0;
   }
 
-  .main-navigation,
-  .header-actions {
-    display: none;
-  }
+  .main-nav {
+    order: 3;
 
-  .mobile-menu-button {
-    display: flex;
+    width: 100%;
 
-    align-items: center;
     justify-content: center;
+
+    margin: 15px 0 0;
+
+    padding-bottom: 5px;
+
+    gap: 20px;
+
+    overflow-x: auto;
+  }
+
+  .header-login-button {
+    min-width: 100px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .main-nav {
+    gap: 15px;
+  }
+
+  .main-nav a {
+    font-size: 12px;
   }
 
 }

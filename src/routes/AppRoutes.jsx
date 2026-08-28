@@ -11,18 +11,34 @@ function AppRoutes() {
   return (
     <Routes>
 
-      <Route path="/" element={<Home />} />
+      <Route
+        path="/"
+        element={<Home />}
+      />
 
-      <Route path="/about" element={<About />} />
+      <Route
+        path="/about"
+        element={<About />}
+      />
 
-      <Route path="/vehicles" element={<Vehicles />} />
+      <Route
+        path="/vehicles"
+        element={<Vehicles />}
+      />
 
-      <Route path="/services" element={<Services />} />
+      <Route
+        path="/services"
+        element={<Services />}
+      />
 
-      <Route path="/contact" element={<Contact />} />
-
-      <Route path="/login" element={<Login />} />
-
+      <Route
+        path="/contact"
+        element={<Contact />}
+      />
+    <Route
+  path="/login"
+  element={<Login />}
+/>
     </Routes>
   );
 }

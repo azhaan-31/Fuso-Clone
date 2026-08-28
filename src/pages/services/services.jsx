@@ -4,40 +4,54 @@ function Services() {
   const services = [
     {
       icon: 'bi-tools',
+      number: '01',
       title: 'Vehicle Maintenance',
-      text: 'Keep your vehicles performing at their best with professional maintenance and servicing.'
+      description:
+        'Keep your vehicle performing at its best with professional scheduled maintenance and inspections.',
     },
     {
       icon: 'bi-gear-wide-connected',
-      title: 'Fleet Solutions',
-      text: 'Manage your entire fleet efficiently with smart solutions built around your business.'
+      number: '02',
+      title: 'Repairs & Diagnostics',
+      description:
+        'Our experienced technicians diagnose problems quickly and provide reliable repair solutions.',
+    },
+    {
+      icon: 'bi-truck',
+      number: '03',
+      title: 'Fleet Management',
+      description:
+        'Smart fleet solutions that help you manage vehicles, reduce downtime and improve efficiency.',
+    },
+    {
+      icon: 'bi-sign-stop',
+      number: '04',
+      title: 'Roadside Assistance',
+      description:
+        'Get support when you need it with dependable roadside assistance for unexpected situations.',
+    },
+    {
+      icon: 'bi-box-seam',
+      number: '05',
+      title: 'Genuine Parts',
+      description:
+        'Quality replacement parts designed to maintain the performance and reliability of your vehicle.',
     },
     {
       icon: 'bi-headset',
-      title: '24/7 Support',
-      text: 'Get the assistance you need whenever you need it from our dedicated support team.'
+      number: '06',
+      title: 'Expert Support',
+      description:
+        'Our support team is ready to answer your questions and help you find the right solution.',
     },
-    {
-      icon: 'bi-speedometer2',
-      title: 'Performance',
-      text: 'Improve productivity and efficiency with reliable vehicle performance solutions.'
-    },
-    {
-      icon: 'bi-shield-check',
-      title: 'Safety',
-      text: 'Put safety first with dependable technology and carefully engineered solutions.'
-    },
-    {
-      icon: 'bi-bar-chart-line',
-      title: 'Business Solutions',
-      text: 'Make better decisions with solutions designed to support your business growth.'
-    }
   ];
 
   return (
     <div className="services-page">
 
-      {/* Hero */}
+      {/* =====================================
+          HERO
+      ===================================== */}
 
       <section className="services-hero">
 
@@ -45,20 +59,20 @@ function Services() {
 
           <div className="services-hero-content">
 
-            <span className="page-label">
-              <i className="bi bi-gear"></i>
-              Our Services
+            <span>
+              OUR SERVICES
             </span>
 
             <h1>
-              Solutions that keep
-              <span> you moving.</span>
+              More than a vehicle.
+              <br />
+              <strong>A complete solution.</strong>
             </h1>
 
             <p>
-              From maintenance to fleet management,
-              our services are designed to keep your
-              business running smoothly.
+              From maintenance and repairs to fleet
+              management and support, we're here to
+              keep your business moving.
             </p>
 
           </div>
@@ -68,7 +82,9 @@ function Services() {
       </section>
 
 
-      {/* Services */}
+      {/* =====================================
+          SERVICES
+      ===================================== */}
 
       <section className="services-section">
 
@@ -77,32 +93,46 @@ function Services() {
           <div className="services-heading">
 
             <span>
-              What We Offer
+              HOW WE HELP
             </span>
 
             <h2>
-              Everything your
-              <br />
-              business needs.
+              Services built around you
             </h2>
+
+            <p>
+              Reliable support and professional
+              solutions designed to keep your
+              vehicles working efficiently.
+            </p>
 
           </div>
 
 
           <div className="row g-4">
 
-            {services.map((service, index) => (
+            {services.map((service) => (
 
               <div
                 className="col-lg-4 col-md-6"
-                key={index}
+                key={service.number}
               >
 
                 <div className="service-card">
 
-                  <div className="service-icon">
+                  <div className="service-card-top">
 
-                    <i className={`bi ${service.icon}`}></i>
+                    <span className="service-number">
+                      {service.number}
+                    </span>
+
+                    <div className="service-icon">
+
+                      <i
+                        className={`bi ${service.icon}`}
+                      ></i>
+
+                    </div>
 
                   </div>
 
@@ -111,12 +141,15 @@ function Services() {
                   </h3>
 
                   <p>
-                    {service.text}
+                    {service.description}
                   </p>
 
-                  <a href="#">
+                  <a href="/contact">
+
                     Learn More
+
                     <i className="bi bi-arrow-right"></i>
+
                   </a>
 
                 </div>
@@ -132,7 +165,105 @@ function Services() {
       </section>
 
 
-      {/* CTA */}
+      {/* =====================================
+          PROCESS
+      ===================================== */}
+
+      <section className="service-process">
+
+        <div className="container">
+
+          <div className="process-heading">
+
+            <span>
+              SIMPLE PROCESS
+            </span>
+
+            <h2>
+              Getting support is easy
+            </h2>
+
+          </div>
+
+
+          <div className="row g-4">
+
+            <div className="col-lg-4">
+
+              <div className="process-card">
+
+                <div className="process-number">
+                  1
+                </div>
+
+                <h3>
+                  Tell us what you need
+                </h3>
+
+                <p>
+                  Contact our team and tell us about
+                  your vehicle or service requirement.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div className="col-lg-4">
+
+              <div className="process-card">
+
+                <div className="process-number">
+                  2
+                </div>
+
+                <h3>
+                  Get expert advice
+                </h3>
+
+                <p>
+                  Our specialists will understand
+                  your requirement and recommend
+                  the right solution.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div className="col-lg-4">
+
+              <div className="process-card">
+
+                <div className="process-number">
+                  3
+                </div>
+
+                <h3>
+                  Get back on the road
+                </h3>
+
+                <p>
+                  We help get your vehicle ready so
+                  you can focus on your business.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================
+          CTA
+      ===================================== */}
 
       <section className="services-cta">
 
@@ -143,20 +274,25 @@ function Services() {
             <div>
 
               <span>
-                Need assistance?
+                NEED ASSISTANCE?
               </span>
 
               <h2>
-                We're here to
+                We're here to keep
                 <br />
-                help your business.
+                you moving.
               </h2>
 
             </div>
 
-            <a href="/contact">
+            <a
+              href="/contact"
+              className="btn btn-primary"
+            >
               Contact Us
+
               <i className="bi bi-arrow-right"></i>
+
             </a>
 
           </div>

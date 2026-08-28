@@ -10,26 +10,24 @@ function About() {
 
       <section className="about-hero">
 
-        <div className="about-hero-shape"></div>
-
         <div className="container">
 
           <div className="about-hero-content">
 
-            <span className="about-label">
-              <i className="bi bi-info-circle"></i>
-              About Fuso
+            <span className="page-label">
+              ABOUT FUSO
             </span>
 
             <h1>
-              Moving your
-              <span> business forward.</span>
+              Moving businesses
+              <br />
+              <span>forward.</span>
             </h1>
 
             <p>
-              We combine modern technology, powerful
-              solutions and thoughtful design to help
-              businesses work smarter and grow faster.
+              We build reliable vehicles and smart
+              transportation solutions that help
+              businesses move with confidence.
             </p>
 
           </div>
@@ -40,7 +38,7 @@ function About() {
 
 
       {/* =================================
-          ABOUT INTRO
+          INTRO
       ================================= */}
 
       <section className="about-intro">
@@ -49,123 +47,133 @@ function About() {
 
           <div className="row align-items-center g-5">
 
-            {/* Image */}
+            <div className="col-lg-6">
+
+              <span className="section-label">
+                WHO WE ARE
+              </span>
+
+              <h2>
+                Built around your
+                <span> business.</span>
+              </h2>
+
+            </div>
+
 
             <div className="col-lg-6">
 
-              <div className="about-image-wrapper">
+              <p className="about-description">
+                Fuso is focused on delivering dependable
+                commercial vehicles designed for real-world
+                business needs.
+              </p>
 
-                <div className="about-image-bg"></div>
+              <p className="about-description">
+                From powerful trucks to professional
+                services, we combine engineering,
+                technology and customer support to help
+                businesses operate efficiently.
+              </p>
 
-                <img
-                  src="/src/assets/images/car 6.png"
-                  alt="Fuso vehicle"
-                  className="about-car-image"
-                />
+            </div>
 
-                <div className="about-experience-card">
+          </div>
 
-                  <strong>
-                    10+
-                  </strong>
+        </div>
 
-                  <span>
-                    Years of
-                    <br />
-                    Experience
-                  </span>
+      </section>
 
+
+      {/* =================================
+          VALUES
+      ================================= */}
+
+      <section className="about-values">
+
+        <div className="container">
+
+          <div className="section-heading">
+
+            <span>
+              OUR VALUES
+            </span>
+
+            <h2>
+              What drives us
+            </h2>
+
+          </div>
+
+
+          <div className="row g-4">
+
+            {/* Reliability */}
+
+            <div className="col-lg-4 col-md-6">
+
+              <div className="value-card">
+
+                <div className="value-icon">
+                  <i className="bi bi-shield-check"></i>
                 </div>
+
+                <h3>
+                  Reliability
+                </h3>
+
+                <p>
+                  Vehicles and services you can
+                  depend on every day.
+                </p>
 
               </div>
 
             </div>
 
 
-            {/* Content */}
+            {/* Innovation */}
 
-            <div className="col-lg-6">
+            <div className="col-lg-4 col-md-6">
 
-              <div className="about-content">
+              <div className="value-card">
 
-                <span className="section-label">
-                  Who We Are
-                </span>
-
-                <h2>
-                  Built with purpose.
-                  <br />
-                  Designed for
-                  <span> success.</span>
-                </h2>
-
-                <p>
-                  Fuso is a modern platform designed to
-                  help businesses simplify their daily
-                  operations and achieve more.
-                </p>
-
-                <p>
-                  From powerful tools to an intuitive
-                  experience, everything we build is
-                  focused on making your work easier,
-                  faster and more productive.
-                </p>
-
-
-                {/* Points */}
-
-                <div className="about-points">
-
-                  <div className="about-point">
-
-                    <div className="point-icon">
-                      <i className="bi bi-check-lg"></i>
-                    </div>
-
-                    <div>
-                      <strong>
-                        Simple & Powerful
-                      </strong>
-
-                      <p>
-                        Easy-to-use tools built for
-                        modern businesses.
-                      </p>
-                    </div>
-
-                  </div>
-
-
-                  <div className="about-point">
-
-                    <div className="point-icon">
-                      <i className="bi bi-check-lg"></i>
-                    </div>
-
-                    <div>
-                      <strong>
-                        Built for Growth
-                      </strong>
-
-                      <p>
-                        Solutions that grow alongside
-                        your business.
-                      </p>
-                    </div>
-
-                  </div>
-
+                <div className="value-icon">
+                  <i className="bi bi-lightbulb"></i>
                 </div>
 
+                <h3>
+                  Innovation
+                </h3>
 
-                <button className="about-button">
+                <p>
+                  Smart technology designed for
+                  modern transportation.
+                </p>
 
-                  Learn More
+              </div>
 
-                  <i className="bi bi-arrow-right"></i>
+            </div>
 
-                </button>
+
+            {/* Customer */}
+
+            <div className="col-lg-4 col-md-6">
+
+              <div className="value-card">
+
+                <div className="value-icon">
+                  <i className="bi bi-people"></i>
+                </div>
+
+                <h3>
+                  Customer First
+                </h3>
+
+                <p>
+                  Solutions and support built around
+                  your business.
+                </p>
 
               </div>
 
@@ -179,116 +187,77 @@ function About() {
 
 
       {/* =================================
-          STATISTICS
+          STATS
       ================================= */}
 
-      <section className="about-stats-section">
+      <section className="about-stats">
 
         <div className="container">
 
-          <div className="about-stats">
+          <div className="row">
 
-            <div className="about-stat">
+            <div className="col-md-3 col-6">
 
-              <strong>
-                10K+
-              </strong>
+              <div className="about-stat">
 
-              <span>
-                Happy Customers
-              </span>
+                <strong>
+                  50+
+                </strong>
 
-            </div>
-
-
-            <div className="stat-line"></div>
-
-
-            <div className="about-stat">
-
-              <strong>
-                25+
-              </strong>
-
-              <span>
-                Countries
-              </span>
-
-            </div>
-
-
-            <div className="stat-line"></div>
-
-
-            <div className="about-stat">
-
-              <strong>
-                98%
-              </strong>
-
-              <span>
-                Customer Satisfaction
-              </span>
-
-            </div>
-
-
-            <div className="stat-line"></div>
-
-
-            <div className="about-stat">
-
-              <strong>
-                24/7
-              </strong>
-
-              <span>
-                Customer Support
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =================================
-          OUR MISSION
-      ================================= */}
-
-      <section className="mission-section">
-
-        <div className="container">
-
-          <div className="row justify-content-center">
-
-            <div className="col-lg-8">
-
-              <div className="mission-content">
-
-                <span className="section-label">
-                  Our Mission
+                <span>
+                  Years Experience
                 </span>
 
-                <h2>
-                  Technology that makes
-                  <span> a difference.</span>
-                </h2>
+              </div>
 
-                <p>
-                  Our mission is simple: create technology
-                  that removes complexity and gives people
-                  the tools they need to achieve their goals.
-                </p>
+            </div>
 
-                <div className="mission-icon">
 
-                  <i className="bi bi-rocket-takeoff"></i>
+            <div className="col-md-3 col-6">
 
-                </div>
+              <div className="about-stat">
+
+                <strong>
+                  100K+
+                </strong>
+
+                <span>
+                  Vehicles
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div className="col-md-3 col-6">
+
+              <div className="about-stat">
+
+                <strong>
+                  50+
+                </strong>
+
+                <span>
+                  Countries
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div className="col-md-3 col-6">
+
+              <div className="about-stat">
+
+                <strong>
+                  24/7
+                </strong>
+
+                <span>
+                  Support
+                </span>
 
               </div>
 
@@ -309,27 +278,29 @@ function About() {
 
         <div className="container">
 
-          <div className="cta-box">
+          <div className="about-cta-box">
 
             <div>
 
               <span>
-                Ready to get started?
+                READY TO MOVE?
               </span>
 
               <h2>
-                Let's build something
+                Let's move your
                 <br />
-                amazing together.
+                business forward.
               </h2>
 
             </div>
 
-            <button>
-              Get Started
-
+            <a
+              href="/contact"
+              className="btn btn-primary"
+            >
+              Contact Us
               <i className="bi bi-arrow-right"></i>
-            </button>
+            </a>
 
           </div>
 

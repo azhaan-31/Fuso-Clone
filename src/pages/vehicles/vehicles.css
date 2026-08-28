@@ -1,69 +1,58 @@
 /* =========================================
-   VEHICLES HERO
+   HERO
 ========================================= */
 
 .vehicles-hero {
-  min-height: 430px;
-
-  display: flex;
-  align-items: center;
+  padding: 100px 0;
 
   background:
     linear-gradient(
-      120deg,
-      #061522,
-      #0d3557
+      135deg,
+      #071a2b,
+      #123c5d
     );
 
   color: #ffffff;
 }
 
 .vehicles-hero-content {
-  max-width: 750px;
+  max-width: 700px;
 }
 
-.page-label {
-  display: inline-flex;
+.vehicles-hero-content > span {
+  display: inline-block;
 
-  align-items: center;
+  margin-bottom: 18px;
 
-  gap: 8px;
+  color: #1688ff;
 
-  margin-bottom: 22px;
+  font-size: 11px;
 
-  padding: 8px 15px;
+  font-weight: 700;
 
-  border: 1px solid rgba(255,255,255,.15);
-
-  border-radius: 50px;
-
-  color: #7bc1ff;
-
-  font-size: 13px;
-
-  font-weight: 600;
+  letter-spacing: 3px;
 }
 
 .vehicles-hero h1 {
-  margin-bottom: 22px;
+  margin: 0 0 25px;
 
-  font-size: clamp(48px, 6vw, 70px);
+  font-size: clamp(45px, 6vw, 70px);
 
-  line-height: 1;
+  line-height: 1.05;
 
-  letter-spacing: -3px;
+  font-weight: 800;
 }
 
-.vehicles-hero h1 span {
-  color: #55adff;
+.vehicles-hero h1 strong {
+  color: #1688ff;
 }
 
 .vehicles-hero p {
-  max-width: 650px;
+  max-width: 580px;
 
   margin: 0;
 
-  color: rgba(255,255,255,.65);
+  color: #bdcad6;
 
   font-size: 17px;
 
@@ -77,40 +66,50 @@
 
 .vehicles-section {
   padding: 100px 0;
+
+  background: #f7faff;
 }
 
-.section-heading {
-  max-width: 700px;
+.vehicles-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
 
   margin-bottom: 50px;
 }
 
-.section-heading > span {
+.vehicles-heading > div span {
   color: #1688ff;
 
-  font-size: 13px;
+  font-size: 11px;
 
   font-weight: 700;
 
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
-.section-heading h2 {
-  margin: 12px 0 18px;
+.vehicles-heading h2 {
+  margin: 10px 0 0;
 
-  color: #101828;
+  color: #071a2b;
 
-  font-size: clamp(36px, 5vw, 52px);
+  font-size: 42px;
 
-  line-height: 1.1;
-
-  letter-spacing: -2px;
+  font-weight: 800;
 }
 
-.section-heading p {
+.vehicles-heading > p {
+  max-width: 420px;
+
+  margin: 0;
+
   color: #667085;
+
+  font-size: 14px;
 
   line-height: 1.8;
 }
@@ -125,14 +124,11 @@
 
   overflow: hidden;
 
-  border: 1px solid #e9eef5;
+  border: 1px solid #e5edf5;
 
-  border-radius: 16px;
+  border-radius: 18px;
 
   background: #ffffff;
-
-  box-shadow:
-    0 10px 30px rgba(16,24,40,.05);
 
   transition: all .3s ease;
 }
@@ -141,13 +137,18 @@
   transform: translateY(-8px);
 
   box-shadow:
-    0 20px 45px rgba(16,24,40,.12);
+    0 20px 50px rgba(7, 26, 43, .1);
 }
+
+
+/* =========================================
+   IMAGE
+========================================= */
 
 .vehicle-image {
   position: relative;
 
-  height: 230px;
+  height: 250px;
 
   display: flex;
 
@@ -157,139 +158,223 @@
 
   overflow: hidden;
 
-  background: #eef6fc;
+  background:
+    linear-gradient(
+      145deg,
+      #edf7ff,
+      #dcefff
+    );
 }
 
 .vehicle-image img {
-  width: 125%;
+  width: 80%;
 
-  max-width: none;
+  max-height: 190px;
+
+  object-fit: contain;
 
   transition: transform .4s ease;
 }
 
 .vehicle-card:hover .vehicle-image img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-.vehicle-icon {
+.vehicle-category {
   position: absolute;
 
   top: 18px;
-  right: 18px;
 
-  width: 42px;
-  height: 42px;
+  left: 18px;
 
-  display: flex;
+  padding: 7px 11px;
 
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
+  border-radius: 20px;
 
   background: #ffffff;
 
   color: #1688ff;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+  font-size: 10px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, .06);
 }
 
-.vehicle-card-content {
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.vehicle-content {
   padding: 28px;
 }
 
-.vehicle-category {
+.vehicle-content h3 {
+  margin: 0 0 10px;
+
+  color: #071a2b;
+
+  font-size: 23px;
+
+  font-weight: 800;
+}
+
+.vehicle-content > p {
+  min-height: 50px;
+
+  margin-bottom: 25px;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SPECS
+========================================= */
+
+.vehicle-specs {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  padding: 18px 0;
+
+  margin-bottom: 20px;
+
+  border-top: 1px solid #edf1f5;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.vehicle-specs > div {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  text-align: center;
+}
+
+.vehicle-specs i {
+  margin-bottom: 3px;
+
+  color: #1688ff;
+
+  font-size: 17px;
+}
+
+.vehicle-specs span {
+  color: #071a2b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.vehicle-specs small {
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.vehicle-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #1688ff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.vehicle-button i {
+  transition: transform .2s ease;
+}
+
+.vehicle-button:hover {
+  color: #071a2b;
+}
+
+.vehicle-button:hover i {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.vehicles-cta {
+  padding: 90px 0;
+}
+
+.vehicles-cta-box {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 55px;
+
+  border-radius: 20px;
+
+  background: #071a2b;
+
+  color: #ffffff;
+}
+
+.vehicles-cta-box > div > span {
   color: #1688ff;
 
   font-size: 11px;
 
   font-weight: 700;
 
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
-.vehicle-card h3 {
-  margin: 8px 0 12px;
+.vehicles-cta-box h2 {
+  margin: 12px 0 0;
 
-  color: #101828;
+  font-size: 36px;
 
-  font-size: 24px;
+  line-height: 1.2;
+
+  font-weight: 800;
 }
 
-.vehicle-card p {
-  margin-bottom: 22px;
-
-  color: #667085;
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-.vehicle-link {
-  display: inline-flex;
+.vehicles-cta-box .btn {
+  display: flex;
 
   align-items: center;
 
-  gap: 9px;
+  gap: 10px;
 
-  color: #1688ff;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  text-decoration: none;
-}
-
-.vehicle-link:hover {
-  color: #0879ed;
-}
-
-
-/* =========================================
-   FEATURES
-========================================= */
-
-.vehicle-features {
-  padding: 80px 0;
-
-  background: #f7f9fc;
-}
-
-.vehicle-feature {
-  padding: 35px;
-
-  border-radius: 14px;
-
-  background: #ffffff;
-
-  text-align: center;
-}
-
-.vehicle-feature > i {
-  font-size: 32px;
-
-  color: #1688ff;
-}
-
-.vehicle-feature h3 {
-  margin: 18px 0 10px;
-
-  font-size: 20px;
-}
-
-.vehicle-feature p {
-  margin: 0;
-
-  color: #667085;
-
-  font-size: 14px;
-
-  line-height: 1.7;
+  padding: 13px 20px;
 }
 
 
@@ -297,18 +382,36 @@
    MOBILE
 ========================================= */
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 
   .vehicles-hero {
-    min-height: 400px;
+    padding: 75px 0;
   }
 
   .vehicles-section {
     padding: 70px 0;
   }
 
-  .vehicles-hero h1 {
-    font-size: 45px;
+  .vehicles-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .vehicles-heading h2 {
+    font-size: 34px;
+  }
+
+  .vehicles-cta-box {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 35px;
+  }
+
+  .vehicles-cta-box h2 {
+    font-size: 29px;
   }
 
 }

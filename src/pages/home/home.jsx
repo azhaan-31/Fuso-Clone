@@ -1,78 +1,13 @@
-import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 import carImage from '../../assets/images/car.png';
 
-import './Home.css';
-
 function Home() {
-
-  const navigate = useNavigate();
-
-  const carRef = useRef(null);
-  const startX = useRef(0);
-
-  const [isDragging, setIsDragging] = useState(false);
-  const [carPosition, setCarPosition] = useState(0);
-
-  const handlePointerDown = (event) => {
-
-    setIsDragging(true);
-
-    startX.current = event.clientX;
-
-    carRef.current?.setPointerCapture(
-      event.pointerId
-    );
-  };
-
-
-  const handlePointerMove = (event) => {
-
-    if (!isDragging) return;
-
-    const difference =
-      event.clientX - startX.current;
-
-    const position = Math.max(
-      0,
-      Math.min(difference, 300)
-    );
-
-    setCarPosition(position);
-  };
-
-
-  const handlePointerUp = () => {
-
-    if (!isDragging) return;
-
-    setIsDragging(false);
-
-    if (carPosition >= 120) {
-
-      setCarPosition(500);
-
-      setTimeout(() => {
-
-        navigate('/about');
-
-        setCarPosition(0);
-
-      }, 350);
-
-    } else {
-
-      setCarPosition(0);
-
-    }
-  };
-
-
   return (
     <div className="home-page">
 
-      {/* =================================
+      {/* ================================
           HERO SECTION
       ================================= */}
 
@@ -86,123 +21,99 @@ function Home() {
 
             <div className="col-lg-6">
 
-              <span className="hero-subtitle">
-                Welcome to Fuso
-              </span>
+              <div className="hero-content">
 
-              <h1>
-                Built to move.
-                <br />
-                <span>Built for you.</span>
-              </h1>
+                <span className="hero-subtitle">
+                  ✦ Welcome to Fuso
+                </span>
 
-              <p>
-                Powerful vehicles, smart solutions
-                and reliable services designed to
-                keep your business moving forward.
-              </p>
+                <h1>
+                  Built to move.
+                  <br />
+                  <span>Built for you.</span>
+                </h1>
+
+                <p>
+                  Powerful vehicles, smart solutions
+                  and reliable services designed to
+                  keep your business moving forward.
+                </p>
+
+                <div className="hero-actions">
+
+                  <Link
+                    to="/vehicles"
+                    className="btn btn-primary"
+                  >
+                    Explore Vehicles
+                    <i className="bi bi-arrow-right"></i>
+                  </Link>
+
+                  <Link
+                    to="/about"
+                    className="btn btn-outline-secondary"
+                  >
+                    Learn More
+                  </Link>
+
+                </div>
 
 
-              <div className="hero-actions">
+                {/* HERO STATS */}
 
-                <a
-                  href="/vehicles"
-                  className="btn btn-primary"
-                >
-                  Explore Vehicles
+                <div className="hero-stats">
 
-                  <i className="bi bi-arrow-right"></i>
+                  <div className="hero-stat">
+                    <strong>10K+</strong>
+                    <span>Happy Users</span>
+                  </div>
 
-                </a>
+                  <div className="hero-stat">
+                    <strong>98%</strong>
+                    <span>Satisfaction</span>
+                  </div>
 
-                <a
-                  href="/about"
-                  className="btn btn-outline-secondary"
-                >
-                  Learn More
-                </a>
+                  <div className="hero-stat">
+                    <strong>24/7</strong>
+                    <span>Support</span>
+                  </div>
+
+                </div>
 
               </div>
 
             </div>
 
 
-            {/* RIGHT SIDE */}
+            {/* RIGHT CAR */}
 
             <div className="col-lg-6">
 
-              <div className="hero-car-area">
+              <div className="hero-image-wrapper">
 
-                {/* Background Circle */}
+                <div className="hero-glow"></div>
 
-                <div className="hero-circle"></div>
+                <img
+                  src={carImage}
+                  alt="Fuso vehicle"
+                  className="hero-car"
+                />
 
+                <div className="hero-image-info">
 
-                {/* Decorative Text */}
+                  <div className="hero-info-icon">
+                    <i className="bi bi-lightning-charge-fill"></i>
+                  </div>
 
-                <div className="hero-car-label">
+                  <div>
+                    <strong>
+                      Premium Performance
+                    </strong>
 
-                  <span>
-                    NEXT
-                  </span>
-
-                  <strong>
-                    GENERATION
-                  </strong>
-
-                </div>
-
-
-                {/* Swipe Instruction */}
-
-                <div className="swipe-instruction">
-
-                  <span>
-                    Swipe the vehicle
-                  </span>
-
-                  <i className="bi bi-arrow-right"></i>
-
-                </div>
-
-
-                {/* Car */}
-
-                <div
-                  ref={carRef}
-                  className={`hero-car ${
-                    isDragging ? 'dragging' : ''
-                  }`}
-                  style={{
-                    transform:
-                      `translateX(${carPosition}px)`
-                  }}
-                  onPointerDown={handlePointerDown}
-                  onPointerMove={handlePointerMove}
-                  onPointerUp={handlePointerUp}
-                  onPointerCancel={handlePointerUp}
-                >
-
-                  <img
-                    src={carImage}
-                    alt="Fuso vehicle"
-                    draggable="false"
-                  />
-
-                </div>
-
-
-                {/* Bottom Hint */}
-
-                <div className="hero-swipe-line">
-
-                  <span></span>
-
-                  <small>
-                    DRAG
-                  </small>
-
-                  <span></span>
+                    <span>
+                      Built for excellence
+                    </span>
+                  </div>
 
                 </div>
 
@@ -214,30 +125,20 @@ function Home() {
 
         </div>
 
-      </section>
 
+        {/* SCROLL TEXT */}
 
-      {/* =================================
-          FEATURES
-      ================================= */}
+      {/* SCROLL TEXT */}
 
-      <section className="content-section">
+<div className="hero-scroll">
 
-        <div className="container">
+  <span>
+    Scroll to explore
+  </span>
 
-          <div className="section-heading">
+  <i className="bi bi-arrow-down"></i>
 
-            <span>
-              Our Features
-            </span>
-
-            <h2>
-              Everything you need
-            </h2>
-
-          </div>
-
-        </div>
+</div>
 
       </section>
 

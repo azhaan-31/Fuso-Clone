@@ -1,251 +1,181 @@
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
   return (
     <div className="login-page">
 
-      <div className="container">
+      <div className="login-container">
 
-        <div className="login-wrapper">
+        {/* LEFT SIDE */}
 
-          {/* Left Side */}
+        <div className="login-brand-side">
 
-          <div className="login-intro">
+          <div className="login-brand-content">
 
-            <span className="login-label">
-              Welcome Back
-            </span>
+            <div className="login-logo">
+              FUSO
+            </div>
 
             <h1>
-              Drive your
+              Move your
               <br />
-              business <span>forward.</span>
+              business
+              <br />
+              forward.
             </h1>
 
             <p>
-              Sign in to your Fuso account and
-              continue managing your business,
-              vehicles and services.
+              Reliable vehicles. Powerful performance.
+              A partner you can depend on.
             </p>
 
-            <div className="login-benefits">
+            <div className="login-features">
 
-              <div className="login-benefit">
-
-                <div className="benefit-icon">
-                  <i className="bi bi-shield-check"></i>
-                </div>
-
-                <div>
-                  <strong>
-                    Secure Access
-                  </strong>
-
-                  <span>
-                    Your account is protected.
-                  </span>
-                </div>
-
+              <div>
+                <i className="bi bi-check-circle-fill"></i>
+                Reliable Vehicles
               </div>
 
-
-              <div className="login-benefit">
-
-                <div className="benefit-icon">
-                  <i className="bi bi-speedometer2"></i>
-                </div>
-
-                <div>
-                  <strong>
-                    Manage Everything
-                  </strong>
-
-                  <span>
-                    Access your business dashboard.
-                  </span>
-                </div>
-
+              <div>
+                <i className="bi bi-check-circle-fill"></i>
+                Powerful Performance
               </div>
 
-
-              <div className="login-benefit">
-
-                <div className="benefit-icon">
-                  <i className="bi bi-headset"></i>
-                </div>
-
-                <div>
-                  <strong>
-                    24/7 Support
-                  </strong>
-
-                  <span>
-                    We're always here to help.
-                  </span>
-                </div>
-
+              <div>
+                <i className="bi bi-check-circle-fill"></i>
+                Trusted Support
               </div>
 
             </div>
 
           </div>
 
+        </div>
 
-          {/* Login Card */}
 
-          <div className="login-card">
+        {/* RIGHT SIDE */}
 
-            <div className="login-card-header">
+        <div className="login-form-side">
 
-              <div className="login-logo">
-                F
+          <div className="login-form-wrapper">
+
+            <span className="login-small-title">
+              Welcome back
+            </span>
+
+            <h2>
+              Sign in to Fuso
+            </h2>
+
+            <p className="login-description">
+              Enter your details to access your account.
+            </p>
+
+
+            {/* EMAIL */}
+
+            <div className="login-field">
+
+              <label>
+                Email Address
+              </label>
+
+              <div className="login-input">
+
+                <i className="bi bi-envelope"></i>
+
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                />
+
               </div>
-
-              <h2>
-                Sign in
-              </h2>
-
-              <p>
-                Enter your details to access your account.
-              </p>
 
             </div>
 
 
-            <form className="login-form">
+            {/* PASSWORD */}
 
-              {/* Email */}
+            <div className="login-field">
 
-              <div className="form-group">
+              <div className="password-label">
 
-                <label htmlFor="email">
-                  Email Address
+                <label>
+                  Password
                 </label>
 
-                <div className="input-wrapper">
-
-                  <i className="bi bi-envelope"></i>
-
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="you@example.com"
-                  />
-
-                </div>
-
-              </div>
-
-
-              {/* Password */}
-
-              <div className="form-group">
-
-                <div className="password-label">
-
-                  <label htmlFor="password">
-                    Password
-                  </label>
-
-                  <a href="#">
-                    Forgot password?
-                  </a>
-
-                </div>
-
-
-                <div className="input-wrapper">
-
-                  <i className="bi bi-lock"></i>
-
-                  <input
-                    id="password"
-                    type="password"
-                    placeholder="Enter your password"
-                  />
-
-                  <button
-                    type="button"
-                    className="password-toggle"
-                  >
-                    <i className="bi bi-eye"></i>
-                  </button>
-
-                </div>
-
-              </div>
-
-
-              {/* Remember */}
-
-              <div className="login-options">
-
-                <label className="remember-me">
-
-                  <input
-                    type="checkbox"
-                  />
-
-                  <span>
-                    Remember me
-                  </span>
-
-                </label>
-
-              </div>
-
-
-              {/* Login Button */}
-
-              <button
-                type="submit"
-                className="login-submit"
-              >
-                Sign In
-
-                <i className="bi bi-arrow-right"></i>
-
-              </button>
-
-
-              {/* Divider */}
-
-              <div className="login-divider">
-
-                <span>
-                  OR
-                </span>
-
-              </div>
-
-
-              {/* Social Login */}
-
-              <button
-                type="button"
-                className="social-login"
-              >
-
-                <i className="bi bi-google"></i>
-
-                Continue with Google
-
-              </button>
-
-
-              {/* Register */}
-
-              <p className="register-text">
-
-                Don't have an account?
-
-                <a href="#">
-                  Create an account
+                <a href="#forgot">
+                  Forgot password?
                 </a>
 
-              </p>
+              </div>
 
-            </form>
+              <div className="login-input">
+
+                <i className="bi bi-lock"></i>
+
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                />
+
+                <i className="bi bi-eye"></i>
+
+              </div>
+
+            </div>
+
+
+            {/* REMEMBER */}
+
+            <label className="remember-me">
+
+              <input type="checkbox" />
+
+              <span>
+                Remember me
+              </span>
+
+            </label>
+
+
+            {/* LOGIN BUTTON */}
+
+            <button className="login-submit">
+
+              Sign In
+
+              <i className="bi bi-arrow-right"></i>
+
+            </button>
+
+
+            {/* CREATE ACCOUNT */}
+
+            <p className="create-account">
+
+              Don't have an account?
+
+              <Link to="/login">
+                Create Account
+              </Link>
+
+            </p>
+
+
+            {/* BACK */}
+
+            <Link
+              to="/"
+              className="back-home"
+            >
+
+              <i className="bi bi-arrow-left"></i>
+
+              Back to Home
+
+            </Link>
 
           </div>
 
