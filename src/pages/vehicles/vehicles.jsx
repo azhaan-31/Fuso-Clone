@@ -1,4 +1,4 @@
-import './Vehicles.css';
+import './vehicles.css';
 
 function Vehicles() {
   const vehicles = [

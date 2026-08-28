@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from '../pages/Home/Home';
-import About from '../pages/About/About';
-import Vehicles from '../pages/Vehicles/Vehicles';
-import Services from '../pages/Services/Services';
-import Contact from '../pages/Contact/Contact';
-import Login from '../pages/Login/Login';
+import Home from '../pages/home/home';
+import About from '../pages/about/about';
+import Vehicles from '../pages/vehicles/vehicles';
+import Services from '../pages/services/services';
+import Contact from '../pages/contact/contact';
+import Login from '../pages/login/login';
 
 function AppRoutes() {
   return (
